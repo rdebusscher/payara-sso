@@ -1,0 +1,29 @@
+## To setup file realm
+./asadmin set configs.config.server-config.security-service.auth-realm.file.property.assign-groups=Users
+./asadmin create-file-user --groups=Users --target=server-config --authrealmname=file rudy
+
+
+## To Setup SSO
+
+./asadmin set configs.config.server-config.http-service.sso-enabled=true
+
+
+## Build
+
+Build the 2 test applications by calling `mvn clean package` in the directories _form-file-realm_ and _sso_application_.
+
+
+## Deploy 
+
+----
+deploy target/form-secured.war
+deploy target/application2.war
+----
+
+
+## Test application
+
+http://localhost:8080/form-secured/secured/hello
+http://localhost:8080/application2/secured/hello
+
+

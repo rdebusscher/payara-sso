@@ -1,0 +1,24 @@
+## OpenIdConnect Setup
+
+Projects are configured for Google OpenId Connect and need clientId and clientSecret setup in `microprofile-config.properties` file
+
+## Build
+
+Build the 2 test applications by calling `mvn clean package` in the directories _openIdConnect_ and _application2_.
+
+
+## Deploy 
+
+----
+deploy target/openid.war
+deploy target/application2.war
+----
+
+## Define the Client Id 
+
+## Test application
+http://localhost:8080/oauthtest/secured/hello
+http://localhost:8080/oauthtest2/secured/hello
+
+
+
